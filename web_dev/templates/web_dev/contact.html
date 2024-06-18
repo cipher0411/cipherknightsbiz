@@ -1,0 +1,117 @@
+{% extends "web_dev/base.html" %}
+{% load static%}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Contact</h2>
+      </div>
+      <div class="col-12">
+        <a href="index.html">Home</a>
+        <a href="about.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Contact Start -->
+<div class="contact py-5">
+  <div class="container">
+    <div class="section-header text-center mb-4">
+      <h2 class="text-custom">Contact Us</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contact-info">
+          <div class="contact-item d-flex align-items-center mb-3">
+            <i class="fa fa-map-marker fa-2x text-custom mr-3"></i>
+            <div class="contact-text">
+              <h2 class="h5 text-custom">Location</h2>
+              <p>Leicester, UK.</p>
+            </div>
+          </div>
+          <div class="contact-item d-flex align-items-center mb-3">
+            <i class="fa fa-phone fa-2x text-custom mr-3"></i>
+            <div class="contact-text">
+              <h2 class="h5 text-custom">Phone</h2>
+              <p>+447459107834</p>
+            </div>
+          </div>
+          <div class="contact-item d-flex align-items-center mb-3">
+            <i class="fa fa-envelope fa-2x text-custom mr-3"></i>
+            <div class="contact-text">
+              <h2 class="h5 text-custom">Email</h2>
+              <p>support@cipherKnights.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="container mt-5">
+          <div class="contact-form">
+            <form method="post" id="emailForm">
+              {% csrf_token %}
+              <h2 class="text-center mb-4 text-custom">Get in touch with us</h2>
+              {% if error %}
+                  <div class="alert alert-danger">
+                      {{ error }}
+                  </div>
+              {% endif %}
+              {% if success_message %}
+                  <div class="alert alert-success">
+                      {{ success_message }}
+                  </div>
+              {% endif %}
+              <div class="row g-4">
+                  <div class="col-sm-6 mb-3">
+                      <div class="form-floating">
+                          <input type="text" class="form-control border-custom" id="first_name" name="first_name" placeholder="Name" required/>
+                          <label for="first_name">First Name</label>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 mb-3">
+                      <div class="form-floating">
+                          <input type="text" class="form-control border-custom" id="last_name" name="last_name" placeholder="Name" required/>
+                          <label for="last_name">Last Name</label>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 mb-3">
+                      <div class="form-floating">
+                          <input type="email" class="form-control border-custom" id="email" name="email" placeholder="Email" required/>
+                          <label for="email">Your Email</label>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 mb-3">
+                      <div class="form-floating">
+                          <input type="tel" class="form-control border-custom" id="phone" name="phone" placeholder="Phone"/>
+                          <label for="phone">Your Phone Number</label>
+                      </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                      <div class="form-floating">
+                          <textarea class="form-control border-custom" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
+                          <label for="message">Message</label>
+                      </div>
+                  </div>
+                  <div class="col-12">
+                      <button class="btn bg-custom text-white w-100" type="submit">Send Message</button>
+                  </div>
+              </div>
+          </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->
+
+
+
+
+  {% endblock %}

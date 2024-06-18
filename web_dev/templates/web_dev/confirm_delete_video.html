@@ -1,0 +1,9 @@
+<!-- confirm_delete_video.html -->
+
+<h2>Delete Video "{{ video.title }}"</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete the video "{{ video.title }}"?</p>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

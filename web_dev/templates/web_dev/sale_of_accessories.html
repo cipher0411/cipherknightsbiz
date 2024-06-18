@@ -1,0 +1,107 @@
+{% extends "web_dev/base.html" %}
+{% load static%}
+{% block title %}Sale of Accessories{% endblock %}
+
+{% block content %}
+
+      <!-- Page Header Start -->
+      <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Tech Equipment</h2>
+                </div>
+                <div class="col-12">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">Tech Equipment</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Page Header End -->
+
+
+
+      <!-- Start service Area -->
+<section class="service-area section-gap" id="service" style="background-color: #f9f9f9;">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8 pb-20 header-text">
+                <h1 class="text-custom">Elevate Your Technology Experience with CipherKnights</h1>
+                <div class="mt-4">
+                    <p>We are committed to providing you with the best technology solutions tailored to your specific needs. 
+                        Let CipherKnights be your trusted partner in navigating the complex landscape of tech equipment. 
+                        Contact us today to schedule a consultation and take the first step towards enhancing your technology experience.</p>
+                    <a class="btn btn-primary text-uppercase" href="{% url 'contact' %}">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-service text-center">
+                    <img class="img-fluid mx-auto d-block rounded" src="{% static 'img/cisco.jpeg' %}" style="max-width: 100px;" alt="">
+                    <h4><span class="lnr lnr-user"></span>Cisco Equipment</h4>
+                    <p>
+                        In the fast-paced world of business, reliable network infrastructure is crucial. 
+                        That's why we at CipherKnights recommend Cisco equipment for all your networking needs. We are here for you, contact us today.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-service text-center">
+                    <img class="img-fluid mx-auto d-block rounded" src="{% static 'img/gaming laptop.jpeg' %}" style="max-width: 100px;" alt="">
+                    <h4><span class="lnr lnr-license"></span>Gamming Laptops</h4>
+                    <p>
+                        Are you a gaming enthusiast looking for the perfect laptop to elevate your gaming experience? Look no 
+                        further! At CipherKnights, we specialize in helping you find the best gaming laptops tailored to your specific needs. 
+                    </p>                                
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-service text-center">
+                    <img class="img-fluid mx-auto d-block rounded" src="{% static 'img/apple laptop.png' %}" style="max-width: 100px;" alt="">
+                    <h4><span class="lnr lnr-phone"></span>Apple Laptops</h4>
+                    <p>
+                        Apple laptops are renowned for their sleek design, powerful performance, and seamless user experience. At CipherKnights, 
+                        we understand that choosing the right Apple laptop can be overwhelming with so many options available.
+                    </p>                                
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-service text-center">
+                    <img class="img-fluid mx-auto d-block rounded" src="{% static 'img/router.jpg' %}" style="max-width: 100px;" alt="">
+                    <h4><span class="lnr lnr-rocket"></span>Routers</h4>
+                    <p>
+                        A reliable internet connection is the backbone of any modern home or office. At CipherKnights, we 
+                        provide expert advice on choosing the best routers to ensure you enjoy fast, stable, and secure internet access. 
+                    </p>                
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-service text-center">
+                    <img class="img-fluid mx-auto d-block rounded" src="{% static 'img/server-rack.jpeg' %}" style="max-width: 100px;" alt="">
+                    <h4><span class="lnr lnr-diamond"></span>Server Rack</h4>
+                    <p>
+                        For businesses that rely on servers, having the right server rack is crucial for organization, cooling, and accessibility. At CipherKnights, we offer a variety of 
+                        server racks to fit your specific needs forserver room or data center.
+                    </p>                                
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-service text-center">
+                    <img class="img-fluid mx-auto d-block rounded" src="{% static 'img/printer.jpeg' %}" style="max-width: 100px;" alt="">
+                    <h4><span class="lnr lnr-bubble"></span>Printers</h4>
+                    <p>
+                        Printers are an essential piece of equipment for both home and office environments. At 
+                        CipherKnights, we offer a comprehensive range of printers, from compact home models to high-capacity office machines.
+                    </p>                                    
+                </div>
+            </div>                      
+        </div>
+    </div>  
+</section>
+<!-- End service Area -->
+
+
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "web_dev/base.html" %}
+{% load static %}
+
+{% block title %}Update Profile{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Update Profile</h2>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'update_profile' %}">Update Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<div class="container-fluid bg-light py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="text-center">Update Profile</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" id="username" class="form-control" value="{{ user.username }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" name="first_name" id="first_name" class="form-control" value="{{ user.first_name }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" name="last_name" id="last_name" class="form-control" value="{{ user.last_name }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" class="form-control" value="{{ user.email }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" name="phone" id="phone" class="form-control" value="{{ user.phone }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <textarea name="address" id="address" class="form-control">{{ user.address }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City:</label>
+                            <input type="text" name="city" id="city" class="form-control" value="{{ user.city }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="postcode">Postcode:</label>
+                            <input type="text" name="postcode" id="postcode" class="form-control" value="{{ user.postcode }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country:</label>
+                            <input type="text" name="country" id="country" class="form-control" value="{{ user.country }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">New Password:</label>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

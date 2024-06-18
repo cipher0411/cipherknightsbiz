@@ -1,0 +1,543 @@
+{% extends "web_dev/base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Carousel Start -->
+<div class="carousel-header">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExample" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExample" data-bs-slide-to="2"></li>
+            <li data-bs-target="#carouselExample" data-bs-slide-to="3"></li>
+            <li data-bs-target="#carouselExample" data-bs-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="{% static 'img/website.jpg' %}" class="img-fluid" alt="Web Development">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h2 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Web Development Services</h2>
+                        <p class="mb-5 fs-5">Unlock the potential of your online presence with our expert web development services. From intuitive design to robust functionality, we create websites that leave a lasting impression.</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="{% url 'request_demo' %}">Request a Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/control-center.jpg' %}" class="img-fluid" alt="Training">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h2 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Training</h2>
+                        <p class="mb-5 fs-5">Empower yourself with the knowledge and skills needed to defend against digital threats. Our comprehensive training covers cyber security, networking, ethical hacking, and more, led by industry professionals.</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="{% url 'training' %}">Join Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/video-editing.jpg' %}" class="img-fluid" alt="Academic Project Assistance">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h2 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Academic Project Assistance</h2>
+                        <p class="mb-5 fs-5">Get ahead in your academic journey with our dedicated support for final year projects and assignments. We provide guidance and resources to help you excel and achieve your academic goals.</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="{% url 'contact' %}">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/camera.jpg' %}" class="img-fluid" alt="Video and Photo Editing Services">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h2 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Professional Video and Photo Editing Services</h2>
+                        <p class="mb-5 fs-5">At Cipher Knights, we specialize in providing high-quality video and photo editing services tailored to meet your creative needs. Whether you’re looking to enhance your personal memories or elevate your brand’s visual content, we have the expertise and tools to deliver outstanding results.</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="{% url 'contact' %}">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/network.jpg' %}" class="img-fluid" alt="Accessories for Sale">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h2 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Accessories for Sale</h2>
+                        <p class="mb-5 fs-5">Explore our collection of high-quality accessories designed to complement your lifestyle. From tech gadgets to stylish essentials, find everything you need in one convenient place.</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="{% url 'contact' %}">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!-- Carousel End -->
+
+<!-- Feature Start -->
+<div class="feature-top py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="feature-item p-4 border rounded" style="background-color: #b98936;">
+                    <h3 class="text-white">SEO-Friendly</h3>
+                    <p class="text-white">100% Optimized Content</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="feature-item p-4 border rounded" style="background-color: #b98936;">
+                    <h3 class="text-white">User Experience</h3>
+                    <p class="text-white">100% Intuitive Navigation</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="feature-item p-4 border rounded" style="background-color: #b98936;">
+                    <h3 class="text-white">Maintenance</h3>
+                    <p class="text-white">100% Ongoing Support</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="feature-item p-4 border rounded" style="background-color: #b98936;">
+                    <h3 class="text-white">Aesthetics</h3>
+                    <p class="text-white">100% Visual Appeal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+<!-- Service Start -->
+<div class="service py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 style="color: #b98936;">Our Services</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item p-4 text-center border rounded bg-light">
+                    <div class="service-icon mb-3">
+                        <i class="fa fa-cog fa-2x" style="color: #b98936;"></i>
+                    </div>
+                    <h3 class="text-dark">Web Development Services</h3>
+                    <p class="text-muted">
+                        In today’s digital world, a well-designed and functional website is crucial for your business's success.
+                    </p>
+                    <a class="btn btn-primary" href="{% url 'web_development' %}" style="background-color: #b98936; border: none;">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item p-4 text-center border rounded bg-light">
+                    <div class="service-icon mb-3">
+                        <i class="fa fa-users fa-2x" style="color: #b98936;"></i>
+                    </div>
+                    <h3 class="text-dark">Company Logo Design</h3>
+                    <p class="text-muted">
+                        A company logo is more than just a visual mark; it’s a symbol that represents your brand identity and communicates your values to your audience.
+                    </p>
+                    <a class="btn btn-primary" href="{% url 'web_development' %}" style="background-color: #b98936; border: none;">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item p-4 text-center border rounded bg-light">
+                    <div class="service-icon mb-3">
+                        <i class="fa fa-graduation-cap fa-2x" style="color: #b98936;"></i>
+                    </div>
+                    <h3 class="text-dark">Training</h3>
+                    <p class="text-muted">
+                        Our comprehensive cyber security training programs empower individuals and organizations with the knowledge and skills needed.
+                    </p>
+                    <a class="btn btn-primary" href="{% url 'training' %}" style="background-color: #b98936; border: none;">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item p-4 text-center border rounded bg-light">
+                    <div class="service-icon mb-3">
+                        <i class="fa fa-graduation-cap fa-2x" style="color: #b98936;"></i>
+                    </div>
+                    <h3 class="text-dark">Academic Project Assistance</h3>
+                    <p class="text-muted">
+                        With our dedicated academic project assistance, you can excel and achieve your academic goals. We deliver on time and never disappoint, we have the neccessary materials.
+                    </p>
+                    <a class="btn btn-primary" href="{% url 'school_project' %}" style="background-color: #b98936; border: none;">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item p-4 text-center border rounded bg-light">
+                    <div class="service-icon mb-3">
+                        <i class="fa fa-laptop fa-2x" style="color: #b98936;"></i>
+                    </div>
+                    <h3 class="text-dark">Accessories for Sale</h3>
+                    <p class="text-muted">
+                        Explore the latest in tech innovation with our range of cutting-edge gadgets. From smart devices to wearable tech. In today's digital age, you need our recommendation.
+                    </p>
+                    <a class="btn btn-primary" href="{% url 'sale_of_accessories' %}" style="background-color: #b98936; border: none;">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item p-4 text-center border rounded bg-light">
+                    <div class="service-icon mb-3">
+                        <i class="fa fa-pencil-square-o fa-2x" style="color: #b98936;"></i>
+                    </div>
+                    <h3 class="text-dark">Professional Video and Photo Editing Services</h3>
+                    <p class="text-muted">
+                        At Cipher Knights, we specialize in providing high-quality video and photo editing services to meet your needs. 
+                    </p>
+                    <a class="btn btn-primary" href="{% url 'gallery' %}" style="background-color: #b98936; border: none;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+
+
+
+<!-- Banner Section Start-->
+<div class="container-fluid banner my-5" style="background-color: #b98936;">
+    <div class="container py-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <div class="py-4">
+                    <h1 class="display-3 text-white">Website samples</h1>
+                    <p class="fw-normal display-3 text-dark mb-4">CipherKnights</p>
+                    <p class="mb-4 text-dark">We specialize in creating stunning, high-performing websites tailored to your business needs. Our team of experienced developers and designers is dedicated to delivering 
+                        cutting-edge solutions that drive engagement, boost conversions, and enhance your brand's digital footprint.</p>
+                    <a href="{% url 'image_gallery' %}" class="btn btn-outline-light rounded-pill text-dark py-3 px-5">Choose your Sample</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img src="{% static 'img/domain.jpg' %}" class="img-fluid w-100 rounded" alt="">
+                    <!--                    <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
+                        <h1 style="font-size: 100px;">100</h1>
+                        <div class="d-flex flex-column text-center">
+                            <span class="h2 mb-0">%</span>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Section End -->
+
+
+
+ 
+
+
+
+<!-- Home Service Section -->
+ <div class="container">
+<div class="container mt-4">
+    <div class="mb-6">
+        <h2 class="text-center text-custom">Some of the Courses Cipher Knights Offer</h2>
+    </div>
+    <div class="services section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="{% static 'img/security.png' %}" alt="{% url 'courses' %}" class="service-icon">
+                        </div>
+                        <div class="main-content">
+                            <h4>Cyber Security</h4>
+                            <p>Cyber security is the practice of protecting systems, networks, and data from digital attacks. Our training covers:</p>
+                            <ul>
+                                <li>Threat Detection and Mitigation</li>
+                                <li>Secure Network Architecture</li>
+                                <li>Incident Response</li>
+                            </ul>
+                            <div class="main-button">
+                                <a class="text-custom" href="{% url 'courses' %}">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="{% static 'img/networking.png' %}" alt="{% url 'courses' %}" class="service-icon">
+                        </div>
+                        <div class="main-content">
+                            <h4>Computer Networking</h4>
+                            <p>Networking involves the design, implementation, and management of computer networks. Our training includes:</p>
+                            <ul>
+                                <li>Network Fundamentals</li>
+                                <li>Network Security</li>
+                                <li>Troubleshooting and Maintenance</li>
+                            </ul>
+                            <div class="main-button">
+                                <a class="text-custom" href="{% url 'courses' %}">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="{% static 'img/hacker.png' %}" alt="{% url 'courses' %}" class="service-icon">
+                        </div>
+                        <div class="main-content">
+                            <h4>Ethical Hacking</h4>
+                            <p>Ethical hacking, or penetration testing, involves testing systems and networks for vulnerabilities to improve security. Our training covers:</p>
+                            <ul>
+                                <li>Penetration Testing Techniques</li>
+                                <li>Security Assessment</li>
+                                <li>Legal and Ethical Considerations</li>
+                            </ul>
+                            <div class="main-button">
+                                <a class="text-custom" href="{% url 'courses' %}">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- End Home Service Section -->
+
+
+
+
+
+
+
+         <!-- Testimonial Start -->
+         <div class="container-fluid testimonial py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Testimonial</h5>
+                    <h1 class="text-custom mb-0">What Some Of Our Client Say!!!</h1>
+                </div>
+                <div class="testimonial-carousel owl-carousel">
+                    <div class="testimonial-item text-center rounded pb-4">
+                        <div class="testimonial-comment bg-light rounded p-4">
+                            <p class="text-center mb-5">Thank you for transforming our online presence with your outstanding web development services! Your 
+                              intuitive designs have truly made a lasting impact on our business.
+                            </p>
+                        </div>
+                        <div class="testimonial-img p-1">
+                            <img src="{% static 'img/review14.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                        </div>
+                        <div style="margin-top: -35px;">
+                            <h5 class="mb-0">Adebisi Balogun</h5>
+                            <p class="mb-0">Care Home Manager</p>
+                            <div class="d-flex justify-content-center">
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center rounded pb-4">
+                        <div class="testimonial-comment bg-light rounded p-4">
+                            <p class="text-center mb-5">I greatly appreciate your comprehensive cyber security training. Your expertise and dedication have 
+                              empowered me with the skills needed to defend against digital threats effectively.
+                            </p>
+                        </div>
+                        <div class="testimonial-img p-1">
+                            <img src="{% static 'img/review4.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                        </div>
+                        <div style="margin-top: -35px;">
+                            <h5 class="mb-0">Adam</h5>
+                            <p class="mb-0">Project Manager</p>
+                            <div class="d-flex justify-content-center">
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center rounded pb-4">
+                        <div class="testimonial-comment bg-light rounded p-4">
+                            <p class="text-center mb-5">Your dedicated support and guidance for my academic projects have been invaluable. Thanks to your help, I have been able to excel in my academic journey and achieve our goals.
+                            </p>
+                        </div>
+                        <div class="testimonial-img p-1">
+                            <img src="{% static 'img/review1.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                        </div>
+                        <div style="margin-top: -35px;">
+                            <h5 class="mb-0">Hassan Aliyu</h5>
+                            <p class="mb-0">Student</p>
+                            <div class="d-flex justify-content-center">
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center rounded pb-4">
+                        <div class="testimonial-comment bg-light rounded p-4">
+                            <p class="text-center mb-5">We're so grateful for your exceptional graphic design services! Your creativity and attention to our brand's identity have truly brought our vision to life, I will recommend your service to people..
+                            </p>
+                        </div>
+                        <div class="testimonial-img p-1">
+                            <img src="{% static 'img/review10.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                        </div>
+                        <div style="margin-top: -35px;">
+                            <h5 class="mb-0">Ping</h5>
+                            <p class="mb-0">Bar Owner</p>
+                            <div class="d-flex justify-content-center">
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                                <i class="fas fa-star text-custom"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center rounded pb-4">
+                      <div class="testimonial-comment bg-light rounded p-4">
+                          <p class="text-center mb-5">We can't thank you enough for creating our company logo. Your design perfectly captures our brand identity, and it has made a significant impact on our business.
+                      </div>
+                      <div class="testimonial-img p-1">
+                          <img src="{% static 'img/review17.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                      </div>
+                      <div style="margin-top: -35px;">
+                          <h5 class="mb-0">Zhang</h5>
+                          <p class="mb-0">Online Vendor</p>
+                          <div class="d-flex justify-content-center">
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="testimonial-item text-center rounded pb-4">
+                      <div class="testimonial-comment bg-light rounded p-4">
+                          <p class="text-center mb-5">Your video and photo editing skills are truly impressive! Thank you for helping me create captivating content that engages my audience and tells my story, Thnk you.
+                          </p>
+                      </div>
+                      <div class="testimonial-img p-1">
+                          <img src="{% static 'img/review2.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                      </div>
+                      <div style="margin-top: -35px;">
+                          <h5 class="mb-0">Ryan</h5>
+                          <p class="mb-0">Content Creator</p>
+                          <div class="d-flex justify-content-center">
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="testimonial-item text-center rounded pb-4">
+                      <div class="testimonial-comment bg-light rounded p-4">
+                          <p class="text-center mb-5">Thank you for introducing us to cutting-edge tech gadgets! Your selection has enhanced our daily life, keeping us connected and organized with style. I will always contact you in future purchase. 
+                          </p>
+                      </div>
+                      <div class="testimonial-img p-1">
+                          <img src="{% static 'img/review18.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                      </div>
+                      <div style="margin-top: -35px;">
+                          <h5 class="mb-0">Romeo</h5>
+                          <p class="mb-0">Tech company manager</p>
+                          <div class="d-flex justify-content-center">
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <div class="testimonial-item text-center rounded pb-4">
+                      <div class="testimonial-comment bg-light rounded p-4">
+                          <p class="text-center mb-5">Thank you for the invaluable knowledge and skills gained from your cyber security, networking, and ethical hacking training, I will recommend your platform to my friends. Once again thank you.
+                          </p>
+                      </div>
+                      <div class="testimonial-img p-1">
+                          <img src="{% static 'img/review11.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                      </div>
+                      <div style="margin-top: -35px;">
+                          <h5 class="mb-0">Moses</h5>
+                          <p class="mb-0">Student</p>
+                          <div class="d-flex justify-content-center">
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <div class="testimonial-item text-center rounded pb-4">
+                      <div class="testimonial-comment bg-light rounded p-4">
+                          <p class="text-center mb-5">I'm thrilled with the website you created for us! The intuitive design and robust functionality have significantly boosted our online presence. Thank you for your exceptional service.
+                          </p>
+                      </div>
+                      <div class="testimonial-img p-1">
+                          <img src="{% static 'img/review7.jpeg' %}" class="img-fluid rounded-circle" alt="Image">
+                      </div>
+                      <div style="margin-top: -35px;">
+                          <h5 class="mb-0">Judith</h5>
+                          <p class="mb-0">Lawyer</p>
+                          <div class="d-flex justify-content-center">
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <div class="testimonial-item text-center rounded pb-4">
+                      <div class="testimonial-comment bg-light rounded p-4">
+                          <p class="text-center mb-5">Working with Cipher Knights on our website was a fantastic experience. The design is intuitive, and the functionality is seamless. Our online presence has never been stronger!"
+                          </p>
+                      </div>
+                      <div class="testimonial-img p-1">
+                          <img src="{% static 'img/review8.jpg' %}" class="img-fluid rounded-circle" alt="Image">
+                      </div>
+                      <div style="margin-top: -35px;">
+                          <h5 class="mb-0">Esther</h5>
+                          <p class="mb-0">Fashion Designer</p>
+                          <div class="d-flex justify-content-center">
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                              <i class="fas fa-star text-custom"></i>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+
+      {% endblock %}

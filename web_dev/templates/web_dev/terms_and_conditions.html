@@ -1,0 +1,39 @@
+{% extends "web_dev/base.html" %}
+{% block title %}Terms and Conditions{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Terms and Conditions</h2>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'index' %}">Home</a>
+                <span class="mx-2">/</span>
+                <span>Terms and Conditions</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <p>
+                These are the terms and conditions. Please read them carefully before proceeding.
+                <!-- Add your terms and conditions content here -->
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+            <a href="{% url 'register' %}" class="btn btn-primary btn-lg btn-block">Back to Register</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

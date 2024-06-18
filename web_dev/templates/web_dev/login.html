@@ -1,0 +1,73 @@
+{% extends "web_dev/base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Login</h2>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'gallery' %}">Gallery</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" style="background-color: #b98936;">
+                    <h2 class="text-center">Login</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.username.label_tag }}
+                            <input type="text" name="{{ form.username.html_name }}" class="form-control form-control-lg {% if form.username.errors %}is-invalid{% endif %}" id="{{ form.username.id_for_label }}">
+                            {% for error in form.username.errors %}
+                                <div class="invalid-feedback">
+                                    <span>{{ error }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password.label_tag }}
+                            <input type="password" name="{{ form.password.html_name }}" class="form-control form-control-lg {% if form.password.errors %}is-invalid{% endif %}" id="{{ form.password.id_for_label }}">
+                            {% for error in form.password.errors %}
+                                <div class="invalid-feedback">
+                                    <span>{{ error }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>
+                        </div>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-danger mt-3">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                    <p class="mb-0">Forgot your password? <a href="{% url 'forgot_password' %}" class="text-reset text-custom">Reset it here</a>.</p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>Don't have an account? <a href="{% url 'register' %}" class="btn btn-link text-custom">Register here</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

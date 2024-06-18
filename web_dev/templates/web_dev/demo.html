@@ -1,0 +1,197 @@
+{% extends "web_dev/base.html" %}
+{% load static%}
+{% block title %}Demo{% endblock %}
+
+{% block content %}
+
+
+      <!-- Page Header Start -->
+      <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Request a  Demo</h2>
+                </div>
+                <div class="col-12">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">Request a Demo</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Page Header End -->
+
+        <!-- Contact Start -->
+        <div class="container-fluid booking py-5">
+          <div class="container py-5">
+              <div class="row g-5 align-items-center">
+
+                  
+                  <div class="col-lg-6">
+                      <h1 class="text-white mb-3">Get in Touch</h1>
+                      <p><i class="text-light fa fa-phone me-3"></i>+447459107834</p>
+                      <p><i class="text-light fa fa-envelope me-3"></i>support@cipherknights.com</p>
+                      <p class="text-white mb-4"><span class="text-custom">100%</span> We are here for you any time you need our services.</p>
+                      
+                      <form id="emailForm" method="post">
+                        {% csrf_token %}
+                        <h2 class="text-center mb-4 text-custom">Get in touch with us</h2>
+            
+                        <!-- Display error message -->
+                        {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error }}
+                        </div>
+                        {% endif %}
+            
+                        <!-- Display success message -->
+                        {% if success_message %}
+                        <div class="alert alert-success">
+                            {{ success_message }}
+                        </div>
+                        <script>
+                            // JavaScript to show an alert after the form is successfully submitted
+                            setTimeout(function() {
+                                alert("Message sent successfully. We will get back to you soon.");
+                            }, 500); // Delayed by 500ms to ensure the message is displayed after the Django template renders
+                        </script>
+                        {% endif %}
+            
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control bg-white border-0" id="name" name="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control bg-white border-0" id="email" name="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control bg-white border-0" id="phone" name="phone" placeholder="Your Phone Number" required>
+                                    <label for="phone">Your Phone Number</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select bg-white border-0" id="service" name="service" required>
+                                        <option value="" disabled selected>Select Service</option>
+                                        <option value="Stactic Web Design">Stactic Web Design</option>
+                                        <option value="Dynamic Web Design">Dynamic Web Design</option>
+                                        <option value="Training">Training</option>
+                                        <option value="Video and Photo Editing">Video and Photo Editing</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                    <label for="service">Service</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" name="message" style="height: 100px"></textarea>
+                                    <label for="message">Special Request</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary text-white w-100 py-3" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                
+                  </div>
+                  <div class="col-lg-6">
+                    <h5 class="section-booking-title pe-3">Meeting</h5>
+                    <h1 class="text-white mb-4">Online Meeting</h1>
+                    <p class="text-white mb-4">You can schedule a Zoom meeting with our admin for more clarification if necessary.</p>
+                    <a href="#" id="scheduleMeetingButton" class="btn btn-light text-dark rounded-pill py-3 px-5 mt-2">Schedule a meeting</a>
+                </div>
+              </div>
+          </div>
+      </div>
+      <!-- contact End -->
+
+
+<!-- Calendly badge widget -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Include SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.4/dist/sweetalert2.all.min.js"></script>
+<!-- Include EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("Go6DWOrnos2q3ec_i"); // Replace with your EmailJS user ID
+    })();
+</script>
+
+<script type="text/javascript">
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting the default way
+
+        // Collect form data
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var service = document.getElementById('service').value;
+        var messageContent = document.getElementById('message').value;
+
+        // Check if any field is empty
+        if (!name || !email || !phone || !service || !messageContent) {
+            // Display error message using SweetAlert
+            Swal.fire({
+                title: "Error!",
+                text: "Please fill out all fields.",
+                icon: "error"
+            });
+            return; // Stop further execution
+        }
+
+        // Set email parameters
+        var templateParams = {
+            name: name,
+            email: email,
+            phone: phone,
+            service: service,
+            message: messageContent
+        };
+
+        // Send email using EmailJS
+        emailjs.send('service_9r7cpkv', 'template_qc7xypd', templateParams)
+        .then(function(response) {
+            // Display success message using SweetAlert
+            Swal.fire({
+                title: "Success!",
+                text: "Message sent successfully.",
+                icon: "success"
+            });
+
+            // Clear the form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('service').value = '';
+            document.getElementById('message').value = '';
+        }, function(error) {
+            // Display error message using SweetAlert
+            Swal.fire({
+                title: "Error!",
+                text: "Failed to send message: " + JSON.stringify(error),
+                icon: "error"
+            });
+        });
+    });
+</script>
+
+
+<!-- Calendly badge widget script -->
+<script type="text/javascript">
+    document.getElementById('scheduleMeetingButton').addEventListener('click', function() {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/cipherknights-support/meeting-with-cipherknights' });
+        return false;
+    });
+</script>
+
+{% endblock %}

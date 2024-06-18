@@ -1,0 +1,234 @@
+{% extends "web_dev/base.html" %}
+{% load static%}
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+
+      <!-- Page Header Start -->
+      <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Courses</h2>
+                </div>
+                <div class="col-12">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">Courses</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Page Header End -->
+
+
+
+<!--================ Start Course Details Area =================-->
+<section class="course_details_area section_gap">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 course_details_left">
+              <div class="main_image mb-4">
+                  <img class="img-fluid rounded" src="img/courses/course-details.jpg" alt="">
+              </div>
+              <div class="content_wrapper">
+          
+              <div class="bg-white p-4 rounded mb-4" style="border: 1px solid #ddd;">
+                  <h2>Eligibility</h2>
+                  <p>Our courses are tailored for students at the beginner level, making them accessible to anyone with a passion for technology and an eagerness to learn. No prior experience is required—just a willingness to explore and delve into the fascinating world of cybersecurity and networking.</p>
+                  <h3>Who Should Enroll:</h3>
+                  <ul>
+                      <li><strong>Beginners:</strong> Individuals who are new to Cyber Security, Networking, or Ethical Hacking and want to start their journey in these fields.</li>
+                      <li><strong>Students:</strong> College or university students looking to build a strong foundation in these high-demand areas.</li>
+                      <li><strong>Professionals:</strong> Anyone looking to switch careers or enhance their existing skills in Cyber Security and Networking.</li>
+                  </ul>
+                  <h3>Why Enroll:</h3>
+                  <ul>
+                      <li><strong>High Demand:</strong> Cyber Security, Networking, and Ethical Hacking are among the fastest-growing fields in technology, with a high demand for skilled professionals.</li>
+                      <li><strong>Career Opportunities:</strong> These skills open doors to a wide range of career opportunities in various industries worldwide.</li>
+                      <li><strong>Hands-on Learning:</strong> Gain practical, hands-on experience through labs, projects, and real-world simulations.</li>
+                      <li><strong>Expert Guidance:</strong> Learn from industry experts who bring real-world experience and insights into the classroom.</li>
+                      <li><strong>Certification:</strong> Prepare for certifications that validate your skills and knowledge, giving you a competitive edge in the job market.</li>
+                  </ul>
+              </div>
+          
+              <a href="{% url 'register' %}" class="btn btn-primary btn-lg btn-block mb-4" style="background-color: #b98936; border-color: #b98936;">Ready to Get Started? Enroll Now!</a>
+
+                  <h4 class="title" style="color: #b98936;">Course Outline</h4>
+                  <div class="content">
+                      <ul class="list-group mb-4">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Introduction to Cyber Security</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Fundamentals of Information Security</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Network Security</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Incident Response</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Digital Forensics</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Ethical Hacking</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Security Awareness and Social Engineering</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Introduction to Networking</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>Routing and Switching</span>
+                            <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <span>Scanning Networks</span>
+                          <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                      </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <span>Network Management</span>
+                              <a class="btn btn-primary btn-sm text-uppercase" style="background-color: #b98936; border: none;" href="{% url 'register' %}">Enroll Now</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 right-contents">
+              <ul class="list-group mb-4">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>Trainer’s Name</span>
+                      <span style="color: #b98936;">John Usiabulu</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>Course Fee</span>
+                      <span style="color: #b98936;">£250</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>Mondays and Thursdays</span>
+                      <span style="color: #b98936;">weekly</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>Schedule</span>
+                      <span style="color: #b98936;">2.00 pm to 4.00 pm</span>
+                  </li>
+              </ul>
+              <a href="{% url 'register' %}" class="btn btn-secondary btn-block text-uppercase mb-4" style="background-color: #b98936; color: #fff; border: none;">Enroll the course</a>
+
+              <h4 class="title mb-4" style="color: #b98936;">Reviews</h4>
+              <div class="content">
+                  <div class="review-top row pt-3 mb-4">
+                      <div class="col-lg-12">
+                          <h6 class="mb-3" style="color: #b98936;">Provide Your Rating</h6>
+                          <div class="d-flex flex-row reviews justify-content-between mb-2">
+                              <span>Quality</span>
+                              <div class="star">
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star" style="color: #b98936;"></i>
+                                  <i class="ti-star" style="color: #b98936;"></i>
+                              </div>
+                              <span>Outstanding</span>
+                          </div>
+                          <div class="d-flex flex-row reviews justify-content-between mb-2">
+                              <span>Punctuality</span>
+                              <div class="star">
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star" style="color: #b98936;"></i>
+                                  <i class="ti-star" style="color: #b98936;"></i>
+                              </div>
+                              <span>Outstanding</span>
+                          </div>
+                          <div class="d-flex flex-row reviews justify-content-between mb-2">
+                              <span>Quality</span>
+                              <div class="star">
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star checked" style="color: #b98936;"></i>
+                                  <i class="ti-star" style="color: #b98936;"></i>
+                                  <i class="ti-star" style="color: #b98936;"></i>
+                              </div>
+                              <span>Outstanding</span>
+                          </div>
+                      </div>
+                  </div>
+
+
+                
+              <div class="row mt-6">
+                    <div class="comments-area mb-4">
+                      <div class="comment-list mb-3">
+                          <div class="single-comment single-reviews d-flex">
+                              <div class="user d-flex align-items-center">
+                                  <div class="thumb">
+                                      <!-- <img src="img/blog/c2.jpg" alt="" class="rounded-circle"> -->
+                                  </div>
+                                  <div class="desc ml-3">
+                                      <h5><a href="{% url 'register' %}" style="color: #b98936;">Master Key Concepts</a></h5>
+                                      <p class="comment">
+                                        Gain a deep understanding of foundational principles in Cyber Security, Networking, and Ethical Hacking.
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="comment-list mb-3">
+                          <div class="single-comment single-reviews d-flex">
+                              <div class="user d-flex align-items-center">
+                                  <div class="thumb">
+                                      <!-- <img src="img/blog/c2.jpg" alt="" class="rounded-circle"> -->
+                                  </div>
+                                  <div class="desc ml-3">
+                                      <h5><a href="{% url 'register' %}" style="color: #b98936;">Hands-on Experience</a></h5>
+                                      <p class="comment">
+                                        Develop practical skills through real-world simulations and projects.
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="comment-list mb-3">
+                          <div class="single-comment single-reviews d-flex">
+                              <div class="user d-flex align-items-center">
+                                  <div class="thumb">
+                                      <!-- <img src="img/blog/c2.jpg" alt="" class="rounded-circle"> -->
+                                  </div>
+                                  <div class="desc ml-3">
+                                      <h5><a href="{% url 'register' %}" style="color: #b98936;">Certification Preparation</a></h5>
+                                      <p class="comment">
+                                        Prepare for industry-recognized certifications to enhance your career prospects.
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</section>
+<!--================ End Course Details Area =================-->
+
+
+
+{% endblock %}
+
+
+

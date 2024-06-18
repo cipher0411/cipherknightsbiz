@@ -1,0 +1,31 @@
+<!-- web_dev/templates/web_dev/upload_video.html -->
+
+{% extends "web_dev/base.html" %}
+{% load static %}
+
+{% block title %}Upload Videos{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container-fluid" style="background-color: #f8f9fa;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card my-5">
+                <div class="card-header" style="background-color: #b98936;">
+                    <h2 class="text-center">Upload New Video</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Upload Video</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
