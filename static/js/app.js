@@ -1,14 +1,14 @@
 "use strict";
 
 // Spinner
-setTimeout(function () {
+setTimeout(function() {
     if ($('#spinner').length > 0) {
         $('#spinner').removeClass('show');
     }
 }, 1);
 
 // Sticky Navbar
-$(window).scroll(function () {
+$(window).scroll(function() {
     try {
         if ($(this).scrollTop() > 45) {
             $('.navbar').addClass('sticky-top shadow-sm');
@@ -20,73 +20,27 @@ $(window).scroll(function () {
     }
 });
 
-// // International Tour carousel
-// try {
-//     $(".InternationalTour-carousel").owlCarousel({
-//         autoplay: true,
-//         smartSpeed: 1000,
-//         center: false,
-//         dots: true,
-//         loop: true,
-//         margin: 25,
-//         nav: false,
-//         navText: [
-//             '<i class="bi bi-arrow-left"></i>',
-//             '<i class="bi bi-arrow-right"></i>'
-//         ],
-//         responsiveClass: true,
-//         responsive: {
-//             0: {
-//                 items: 1
-//             },
-//             768: {
-//                 items: 2
-//             },
-//             992: {
-//                 items: 2
-//             },
-//             1200: {
-//                 items: 3
-//             }
-//         }
-//     });
-// } catch (error) {
-//     console.error("Error in International Tour carousel:", error);
-// }
 
-// Packages carousel
-// try {
-//     $(".packages-carousel").owlCarousel({
-//         autoplay: true,
-//         smartSpeed: 1000,
-//         center: false,
-//         dots: false,
-//         loop: true,
-//         margin: 25,
-//         nav: true,
-//         navText: [
-//             '<i class="bi bi-arrow-left"></i>',
-//             '<i class="bi bi-arrow-right"></i>'
-//         ],
-//         responsiveClass: true,
-//         responsive: {
-//             0: {
-//                 items: 1
-//             },
-//             768: {
-//                 items: 2
-//             },
-//             992: {
-//                 items: 2
-//             },
-//             1200: {
-//                 items: 3
-//             }
-//         }
-//     });
-// } catch (error) {
-//     console.error("Error in packages carousel:", error);
-// }
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+    dropdowns.forEach(function(dropdown) {
+        var toggle = dropdown.querySelector('.dropdown-toggle');
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function() {
+        dropdowns.forEach(function(dropdown) {
+            dropdown.classList.remove('show');
+        });
+    });
+});
+
 
 // Testimonial carousel
 try {
@@ -123,7 +77,7 @@ try {
 }
 
 // Back to top button
-$(window).scroll(function () {
+$(window).scroll(function() {
     try {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
@@ -135,7 +89,7 @@ $(window).scroll(function () {
     }
 });
 
-$('.back-to-top').click(function () {
+$('.back-to-top').click(function() {
     try {
         $('html, body').animate({
             scrollTop: 0
@@ -150,26 +104,17 @@ $('.back-to-top').click(function () {
 try {
     $("#carouselId").carousel({ interval: 5000 }); // Set the interval for auto sliding to 5 seconds (5000 milliseconds)
 
-    $(".carousel-control-prev").click(function () {
+    $(".carousel-control-prev").click(function() {
         $("#carouselId").carousel("prev");
     });
 
-    $(".carousel-control-next").click(function () {
+    $(".carousel-control-next").click(function() {
         $("#carouselId").carousel("next");
     });
 } catch (error) {
     console.error("Error in carousel initialization:", error);
 }
 
-// Owl Carousel initialization for home video
-function playVideo(videoId) {
-    var video = document.getElementById(videoId);
-    if (video.paused) {
-        video.play();
-    } else {
-        video.pause();
-    }
-}
 
 // Initialize Owl Carousel
 $('.owl-banner').owlCarousel({
@@ -190,8 +135,8 @@ $('.owl-banner').owlCarousel({
 });
 
 // Calendly linking
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('scheduleMeetingButton').addEventListener('click', function (event) {
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('scheduleMeetingButton').addEventListener('click', function(event) {
         event.preventDefault(); // Prevent the default link behavior
         Calendly.initPopupWidget({
             url: 'https://calendly.com/estheradanma010/prouesse-fashion-meeting',

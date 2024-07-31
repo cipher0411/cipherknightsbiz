@@ -1,5 +1,5 @@
 {% load static %}
-<!-- Navbar & Hero Start -->
+<!-- Navbar Start -->
 <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
         <a href="{% url 'index' %}" class="navbar-brand p-0 d-flex align-items-center">
@@ -13,26 +13,24 @@
             <div class="navbar-nav ms-auto py-0">
                 <a href="{% url 'index' %}" class="nav-item nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="{% url 'contact' %}" class="dropdown-item">Training</a>
+                    <a href="#" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <div class="dropdown-menu" aria-labelledby="servicesDropdown">
                         <a href="{% url 'web_development' %}" class="dropdown-item">Web Development</a>
                         <a href="{% url 'school_project' %}" class="dropdown-item">Help with School Project</a>
-                        <a href="{% url 'sale_of_accessories' %}" class="dropdown-item">Sale of Accessories</a>
+                        <a href="{% url 'sale_of_accessories' %}" class="dropdown-item">Web Design</a>
+                        <a href="{% url 'design' %}" class="dropdown-item">Web Security</a>
                     </div>
                 </div>
                 <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
-                <a href="{% url 'contact' %}" class="nav-item nav-link">Courses</a>
                 <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
                 {% if user.is_authenticated %}
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end">
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
                         <a class="dropdown-item" href="#">Inbox</a>
-                        <div class="dropdown-divider"></div>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                     </div>
@@ -42,9 +40,8 @@
                 <a href="{% url 'register' %}" class="nav-item nav-link">Register</a>
                 {% endif %}
             </div>
-                <a href="{% url 'request_demo' %}" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Request a Demo</a>
-
+            <a href="{% url 'request_demo' %}" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Request a Demo</a>
         </div>
     </nav>
 </div>
-<!-- Navbar & Hero End -->
+<!-- Navbar End -->
