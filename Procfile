@@ -1,1 +1,1 @@
-"web: gunicorn cipherknights.wsgi --log-file -" 
+web: gunicorn cipherknights.wsgi --log-file -
