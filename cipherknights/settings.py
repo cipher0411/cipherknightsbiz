@@ -155,6 +155,9 @@ STATICFILES_DIRS = [
 
 # For production, you may want to collect static files into a single directory
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Add your custom static files directory if needed
+]
 
 
 MEDIA_URL = '/media/'
