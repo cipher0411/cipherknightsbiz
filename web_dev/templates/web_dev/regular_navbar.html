@@ -15,22 +15,13 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                     <div class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <a href="{% url 'training' %}" class="dropdown-item">Training</a>
                         <a href="{% url 'web_development' %}" class="dropdown-item">Web Development</a>
                         <a href="{% url 'school_project' %}" class="dropdown-item">Help with School Project</a>
-                        <a href="{% url 'sale_of_accessories' %}" class="dropdown-item">Sale of Accessories</a>
-                        <!-- <a href="{% url 'photo_video_editing' %}" class="dropdown-item">Video and Photo Editing</a> -->
+                        <a href="{% url 'sale_of_accessories' %}" class="dropdown-item">Web Design</a>
+                        <a href="{% url 'design' %}" class="dropdown-item">Web Security</a>
                     </div>
                 </div>
                 <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="galleryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gallery</a>
-                    <div class="dropdown-menu" aria-labelledby="galleryDropdown">
-                        <a href="{% url 'gallery' %}" class="dropdown-item">Video Gallery</a>
-                        <a href="{% url 'image_gallery' %}" class="dropdown-item">Image Gallery</a>
-                    </div>
-                </div>
-                <a href="{% url 'courses' %}" class="nav-item nav-link">Courses</a>
                 <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
                 {% if user.is_authenticated %}
                 <div class="nav-item dropdown">
@@ -41,9 +32,6 @@
                         <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
                         <a class="dropdown-item" href="#">Inbox</a>
                         <div class="dropdown-divider"></div>
-                        <!--<a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a>-->
-                        <!--<a class="dropdown-item" href="{% url 'upload_delete_videos' %}">Upload Videos</a>-->
-                        <!--<a class="dropdown-item" href="{% url 'upload_delete_images' %}">Upload Images</a>-->
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                     </div>

@@ -6,7 +6,6 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('web_dev.urls')),
-    path('', include('gallery.urls')),
     path('web_dev/', include('web_dev.urls')), 
 ]
 if settings.DEBUG:

@@ -22,8 +22,6 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 import random
 from django.views import View
-from .models import Video
-from .forms import VideoForm, VideoDeleteForm
 from django.conf import settings
 from datetime import datetime, timedelta
 from django.utils import timezone
@@ -51,21 +49,13 @@ def contact(request):
 def cookie(request):
     return render(request, 'web_dev/cookie.html')
 
-# def demo(request):
-#     return render(request, 'web_dev/demo.html')
+def design(request):
+     return render(request, 'web_dev/design.html')
 
 def request_demo(request):
     # Add your logic here
     return render(request, 'web_dev/demo.html')
 
-def courses(request):
-    return render(request, 'web_dev/courses.html')
-
-def gallery(request):
-    return render(request, 'web_dev/gallery.html')
-
-def training(request):
-    return render(request, 'web_dev/training.html')
 
 def web_development(request):
     return render(request, 'web_dev/web_development.html')
@@ -171,20 +161,6 @@ def my_view(request):
 def user_admin_view(request):
     users = User.objects.all()
     return render(request, 'admin/user_admin.html', {'users': users})
-
-# class CreateUserView(CreateView):
-#     model = User
-#     form_class = CustomUserCreationForm
-#     template_name = 'admin/create_user.html'
-#     success_url = reverse_lazy('user_admin_view')
-
-#     def form_valid(self, form):
-#         user = form.save(commit=False)
-#         password = form.cleaned_data['password1']
-#         user.set_password(password)
-#         user.save()
-#         return super().form_valid(form)
-
 
 
 @csrf_protect
@@ -318,77 +294,7 @@ class ResetPasswordView(View):
         return redirect('login')
 
     
+
     
     
     
-def test_email(request):
-    try:
-        send_mail(
-            'Test Email',
-            'This is a test email.',
-            'support@cipherknights.com',
-            ['uwajohn101@outlook.com'],
-            fail_silently=False,
-        )
-        return HttpResponse("Email sent successfully.")
-    except Exception as e:
-        return HttpResponse(f"Error: {e}")
-    
-    
-    
-    
-    
-def photo_video_editing(request):
-    return render(request, 'web_dev/photo_video_editing.html')
-
-
-def index(request):
-    videos = Video.objects.all()
-    return render(request, 'web_dev/index.html', {'videos': videos})
-
-def upload_delete_videos(request):
-    videos = Video.objects.all()
-
-    if request.method == 'POST':
-        if 'upload' in request.POST:
-            form = VideoForm(request.POST, request.FILES)
-            if form.is_valid():
-                form.save()
-                return redirect('upload_delete_videos')
-        elif 'delete' in request.POST:
-            delete_form = VideoDeleteForm(request.POST)
-            if delete_form.is_valid():
-                video_ids = delete_form.cleaned_data.get('video_ids')
-                Video.objects.filter(id__in=video_ids).delete()
-                return redirect('upload_delete_videos')
-    else:
-        form = VideoForm()
-        delete_form = VideoDeleteForm()
-
-    return render(request, 'web_dev/upload_delete_videos.html', {
-        'form': form,
-        'delete_form': delete_form,
-        'videos': videos
-    })
-
-def gallery(request):
-    videos = Video.objects.all()
-    return render(request, 'web_dev/gallery.html', {'videos': videos})
-
-
-
-def display_videos(request):
-    videos = Video.objects.all()
-    return render(request, 'web_dev/display_videos.html', {'videos': videos})
-
-
-
-def delete_video(request, video_id):
-    video = get_object_or_404(Video, id=video_id)
-    
-    if request.method == 'POST':
-        video.delete()
-        return redirect('gallery')  # Redirect to the appropriate URL after deletion
-    
-    return render(request, 'gallery/confirm_delete_video.html', {'video': video})
-

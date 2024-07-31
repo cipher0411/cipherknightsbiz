@@ -87,14 +87,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
-
-class Video(models.Model):
-    user = models.CharField(max_length=150)
-    title = models.CharField(max_length=200)
-    video_file = models.FileField(upload_to='videos/')
-    poster_image = models.ImageField(upload_to='video_posters/')
-    description = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.title

@@ -8,7 +8,6 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from .models import User
 from .models import Contact
-from .models import Video
 
 class UserRegistrationForm(UserCreationForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
@@ -109,14 +108,3 @@ class ContactForm(forms.ModelForm):
             'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Leave a message here', 'rows': 4}),
         }
         
-        
-class VideoForm(forms.ModelForm):
-    class Meta:
-        model = Video
-        fields = ['title', 'video_file', 'poster_image', 'description']
-
-class VideoDeleteForm(forms.Form):
-    video_ids = forms.ModelMultipleChoiceField(
-        queryset=Video.objects.all(), 
-        widget=forms.CheckboxSelectMultiple
-    )

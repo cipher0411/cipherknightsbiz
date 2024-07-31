@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django import forms
-from .models import User, Profile, Contact, Video
+from .models import User, Profile, Contact
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
@@ -45,11 +45,6 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'phone')
     search_fields = ('first_name', 'last_name', 'email')
 
-@admin.register(Video)
-class VideoAdmin(admin.ModelAdmin):
-    list_display = ('title', 'user', 'created_at')
-    search_fields = ('title', 'user')
-    list_filter = ('created_at',)
 
 
 
