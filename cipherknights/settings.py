@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import environ
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,6 +54,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+import django_heroku
+django_heroku.settings(locals())
 
 ROOT_URLCONF = 'cipherknights.urls'
 
@@ -169,13 +174,7 @@ DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 # Other settings...
 AUTH_USER_MODEL = 'web_dev.User'
 
-# AUTHENTICATION_BACKENDS = [
-#     'web_dev.auth_backends.EmailOrUsernameModelBackend',
-#     'django.contrib.auth.backends.ModelBackend',
-# ]
 
-
-# AUTH_USER_MODEL = 'web_dev.User'
 
 
 
