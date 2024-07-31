@@ -352,30 +352,6 @@
 }
 
 
-/* Mobile Dropdown Menu Styles */
-
-@media (max-width: 991.98px) {
-    .navbar-light .navbar-collapse {
-        background-color: var(--bs-white);
-        /* Ensure background is set for mobile */
-    }
-    .navbar-light .navbar-nav .nav-item .dropdown-menu {
-        display: none;
-        /* Hide by default */
-        opacity: 0;
-        /* Hide completely */
-        transition: opacity 0.5s;
-        /* Smooth transition */
-    }
-    .navbar-light .navbar-nav .nav-item.show .dropdown-menu {
-        display: block;
-        /* Show when parent item is 'show' */
-        opacity: 1;
-        /* Fully visible */
-    }
-}
-
-
 /***********/
 
 

@@ -21,26 +21,6 @@ $(window).scroll(function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    var dropdowns = document.querySelectorAll('.nav-item.dropdown');
-
-    dropdowns.forEach(function(dropdown) {
-        var toggle = dropdown.querySelector('.dropdown-toggle');
-        toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            dropdown.classList.toggle('show');
-        });
-    });
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function() {
-        dropdowns.forEach(function(dropdown) {
-            dropdown.classList.remove('show');
-        });
-    });
-});
-
 
 // Testimonial carousel
 try {
