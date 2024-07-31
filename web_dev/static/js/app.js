@@ -1,14 +1,14 @@
 "use strict";
 
 // Spinner
-setTimeout(function() {
+setTimeout(function () {
     if ($('#spinner').length > 0) {
         $('#spinner').removeClass('show');
     }
 }, 1);
 
 // Sticky Navbar
-$(window).scroll(function() {
+$(window).scroll(function () {
     try {
         if ($(this).scrollTop() > 45) {
             $('.navbar').addClass('sticky-top shadow-sm');
@@ -20,14 +20,110 @@ $(window).scroll(function() {
     }
 });
 
+// // International Tour carousel
+// try {
+//     $(".InternationalTour-carousel").owlCarousel({
+//         autoplay: true,
+//         smartSpeed: 1000,
+//         center: false,
+//         dots: true,
+//         loop: true,
+//         margin: 25,
+//         nav: false,
+//         navText: [
+//             '<i class="bi bi-arrow-left"></i>',
+//             '<i class="bi bi-arrow-right"></i>'
+//         ],
+//         responsiveClass: true,
+//         responsive: {
+//             0: {
+//                 items: 1
+//             },
+//             768: {
+//                 items: 2
+//             },
+//             992: {
+//                 items: 2
+//             },
+//             1200: {
+//                 items: 3
+//             }
+//         }
+//     });
+// } catch (error) {
+//     console.error("Error in International Tour carousel:", error);
+// }
 
+// Packages carousel
+// try {
+//     $(".packages-carousel").owlCarousel({
+//         autoplay: true,
+//         smartSpeed: 1000,
+//         center: false,
+//         dots: false,
+//         loop: true,
+//         margin: 25,
+//         nav: true,
+//         navText: [
+//             '<i class="bi bi-arrow-left"></i>',
+//             '<i class="bi bi-arrow-right"></i>'
+//         ],
+//         responsiveClass: true,
+//         responsive: {
+//             0: {
+//                 items: 1
+//             },
+//             768: {
+//                 items: 2
+//             },
+//             992: {
+//                 items: 2
+//             },
+//             1200: {
+//                 items: 3
+//             }
+//         }
+//     });
+// } catch (error) {
+//     console.error("Error in packages carousel:", error);
+// }
 
-//Testimonial carousel main
-
-
+// Testimonial carousel
+try {
+    $(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1000,
+        center: true,
+        dots: true,
+        loop: true,
+        margin: 25,
+        nav: true,
+        navText: [
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ],
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            992: {
+                items: 2
+            },
+            1200: {
+                items: 3
+            }
+        }
+    });
+} catch (error) {
+    console.error("Error in testimonial carousel:", error);
+}
 
 // Back to top button
-$(window).scroll(function() {
+$(window).scroll(function () {
     try {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
@@ -39,7 +135,7 @@ $(window).scroll(function() {
     }
 });
 
-$('.back-to-top').click(function() {
+$('.back-to-top').click(function () {
     try {
         $('html, body').animate({
             scrollTop: 0
@@ -50,43 +146,20 @@ $('.back-to-top').click(function() {
     }
 });
 
-
-
-
 // Carousel control
 try {
     $("#carouselId").carousel({ interval: 5000 }); // Set the interval for auto sliding to 5 seconds (5000 milliseconds)
 
-    $(".carousel-control-prev").click(function() {
+    $(".carousel-control-prev").click(function () {
         $("#carouselId").carousel("prev");
     });
 
-    $(".carousel-control-next").click(function() {
+    $(".carousel-control-next").click(function () {
         $("#carouselId").carousel("next");
     });
 } catch (error) {
     console.error("Error in carousel initialization:", error);
 }
-
-
-// testimonial
-$(document).ready(function() {
-    $(".testimonial-carousel").owlCarousel({
-        items: 3, // Display three testimonials at a time
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        dots: true,
-        nav: true,
-        navText: [
-            '<i class="fas fa-chevron-left"></i>',
-            '<i class="fas fa-chevron-right"></i>'
-        ],
-    });
-});
-
-
-
 
 // Owl Carousel initialization for home video
 function playVideo(videoId) {
@@ -116,30 +189,15 @@ $('.owl-banner').owlCarousel({
     }
 });
 
-// // Calendly linking
-// document.addEventListener('DOMContentLoaded', function() {
-//     document.getElementById('scheduleMeetingButton').addEventListener('click', function(event) {
-//         event.preventDefault(); // Prevent the default link behavior
-//         Calendly.initPopupWidget({
-//             url: 'https://calendly.com/cipherknights-support/meeting-with-cipherknights',
-//             color: '#0069ff',
-//             textColor: '#ffffff',
-//             branding: false
-//         });
-//     });
-// });
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var videos = document.querySelectorAll('video');
-    videos.forEach(function(video) {
-        video.addEventListener('click', function() {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
+// Calendly linking
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('scheduleMeetingButton').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        Calendly.initPopupWidget({
+            url: 'https://calendly.com/estheradanma010/prouesse-fashion-meeting',
+            color: '#0069ff',
+            textColor: '#ffffff',
+            branding: false
         });
     });
 });
