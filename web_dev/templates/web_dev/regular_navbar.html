@@ -6,20 +6,20 @@
             <img src="{% static 'img/cyber logo.png' %}" alt="Logo" style="max-height: 40px; margin-right: 10px;">
             <h1 class="m-0">CipherKnights</h1>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="fa fa-bars"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="{% url 'index' %}" class="nav-item nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                    <div class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <a href="{% url 'web_development' %}" class="dropdown-item">Web Development</a>
-                        <a href="{% url 'school_project' %}" class="dropdown-item">Help with School Project</a>
-                        <a href="{% url 'sale_of_accessories' %}" class="dropdown-item">Web Design</a>
-                        <a href="{% url 'design' %}" class="dropdown-item">Web Security</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <li><a href="{% url 'web_development' %}" class="dropdown-item">Web Development</a></li>
+                        <li><a href="{% url 'school_project' %}" class="dropdown-item">Help with School Project</a></li>
+                        <li><a href="{% url 'sale_of_accessories' %}" class="dropdown-item">Web Design</a></li>
+                        <li><a href="{% url 'design' %}" class="dropdown-item">Web Security</a></li>
+                    </ul>
                 </div>
                 <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
                 <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
@@ -28,21 +28,19 @@
                     <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                        <a class="dropdown-item" href="#">Inbox</a>
-                        <div class="dropdown-divider"></div>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Inbox</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
                 </div>
                 {% else %}
                 <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
                 <a href="{% url 'register' %}" class="nav-item nav-link">Register</a>
                 {% endif %}
             </div>
-                <a href="{% url 'request_demo' %}" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Request a Demo</a>
-
+            <a href="{% url 'request_demo' %}" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Request a Demo</a>
         </div>
     </nav>
 </div>
@@ -50,53 +48,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var navCollapse = document.getElementById('navbarCollapse');
-        var navToggler = document.querySelector('.navbar-toggler');
-        var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-        var dropdownMenus = document.querySelectorAll('.dropdown-menu');
-
-        navToggler.addEventListener('click', function () {
-            navCollapse.classList.toggle('show');
-        });
-
-        // Close the collapse menu when a nav-link is clicked, except for dropdown links
-        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        navLinks.forEach(function (navLink) {
-            navLink.addEventListener('click', function () {
-                if (!navLink.classList.contains('dropdown-toggle') && navCollapse.classList.contains('show')) {
-                    navCollapse.classList.remove('show');
-                }
-            });
-        });
-
-        // Close the dropdown menu when clicking outside of it
-        document.addEventListener('click', function (event) {
-            var isClickInside = navToggler.contains(event.target) || navCollapse.contains(event.target);
-            if (!isClickInside && navCollapse.classList.contains('show')) {
-                navCollapse.classList.remove('show');
-            }
-        });
-
-        // Prevent dropdown menu from closing when clicking inside it
-        dropdownMenus.forEach(function (dropdownMenu) {
-            dropdownMenu.addEventListener('click', function (event) {
-                event.stopPropagation();
-            });
-        });
-
-        // Handle dropdown toggles separately
-        dropdownToggles.forEach(function (dropdownToggle) {
-            dropdownToggle.addEventListener('click', function (event) {
-                var parentDropdown = event.target.closest('.dropdown');
-                var dropdownMenu = parentDropdown.querySelector('.dropdown-menu');
-                dropdownMenu.classList.toggle('show');
-            });
-        });
-    });
-</script>
-
 </body>
 </html>
