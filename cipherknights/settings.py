@@ -20,10 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!q9tx8zfuwr70%x#b6h&9k0@oy$6wfz2qlnh2x$vh6=2)1$#zo'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
+
 
 ALLOWED_HOSTS = []
 
@@ -156,19 +157,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
-# settings.py
+# Email configuration
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_PORT = env.int('EMAIL_PORT')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS', default=True)
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+# Other settings...
 AUTH_USER_MODEL = 'web_dev.User'
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.elasticemail.com'
-EMAIL_PORT = 2525
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'cipherknights@cipherknights.com'
-EMAIL_HOST_PASSWORD = 'F47B5F9ED1A5D3EE73C11C4F78E83C6ACF55'
-DEFAULT_FROM_EMAIL = 'cipherknights@cipherknights.com'
-
 
 # AUTHENTICATION_BACKENDS = [
 #     'web_dev.auth_backends.EmailOrUsernameModelBackend',
